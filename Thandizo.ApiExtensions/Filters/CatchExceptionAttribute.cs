@@ -4,7 +4,6 @@ using Serilog;
 using Serilog.Formatting.Compact;
 using System;
 using System.IO;
-using Thandizo.ApiExtensions.General;
 
 namespace Thandizo.ApiExtensions.Filters
 {
@@ -57,10 +56,7 @@ namespace Thandizo.ApiExtensions.Filters
             }
             //************* end of serilog **************************************
 
-            context.Result = new BadRequestObjectResult(new GeneralResponse
-            {
-                Message = message
-            });
+            context.Result = new BadRequestObjectResult(message);
         }
     }
 }
